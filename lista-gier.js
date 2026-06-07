@@ -189,7 +189,7 @@ const bazaGier = [
         id: 17,
         title: "Stardew Valley",
         price: "€2.50",
-        tags: ["new"],
+        tags: [],
         soldCount: 0,
         available: "Yes",
         image: "https://image.api.playstation.com/cdn/UP2456/CUSA06840_00/0WuZecPtRr7aEsQPv2nJqiPa2ZvDOpYm.png",
