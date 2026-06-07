@@ -25,7 +25,7 @@ const bazaGier = [
         requestedBy: "Skectta",
         image: "https://assets.xboxservices.com/assets/7b/54/7b54f5e4-0857-4ce3-8a18-2b8c431e8a9e.jpg?n=Elden-Ring_GLP-Page-Hero-0_1083x1222_01.jpg",
         description: "An epic action RPG adventure requested by our community. Rise, Tarnished, and be guided by grace.",
-        features: ["Safe & Instant Delivery", "Game of The Year Edition", "24/7 Discord Support"]
+        features: ["Safe & Instant Delivery", "Shadow of the Erdtree included", "1-Click Easy Installer", "24/7 Discord Support"]
     },
     {
         id: 3,
@@ -48,7 +48,7 @@ const bazaGier = [
         available: "Yes",
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202508/1316/3302f35b66691aa405aee31624c0c95fe73081be8e0c75bb.png",
         description: "Game + Bypass included. Embark on a journey that begins with Batman's origins. Young Bruce Wayne trains with the League of Shadows, becomes Gotham's hero, and forges a new family of allies with Jim Gordon, Catwoman, Robin, Nightwing, and Batgirl. Face the ever-increasing threat of Batman's enemies, facing the Joker, Penguin, Mr. Freeze, Poison Ivy, Bane, and many more.",
-        features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "24/7 Discord Support"]
+        features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "1-Click Easy Installer", "24/7 Discord Support"]
     },
     {
         id: 5,
@@ -227,7 +227,7 @@ const bazaGier = [
         available: "Yes",
         image: "https://image.api.playstation.com/cdn/EP0700/CUSA03365_00/OFMeAw2KhrdaEZAjW1f3tCIXbogkLpTC.png",
         description: "The fires are dying, and the world is crumbling. Venture into a land filled with gigantic enemies and locations. Players will be immersed in a world of epic atmosphere and darkness, thanks to faster gameplay and increased combat intensity. Both fans and newcomers will fully immerse themselves in this game, renowned for its replayability and stunning graphics. Only embers remain... Prepare for battle once more and welcome the darkness!",
-        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+        features: ["Safe & Instant Delivery", "DLCs included", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
 
