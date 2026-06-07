@@ -203,7 +203,7 @@ const bazaGier = [
         tags: [],
         soldCount: 0,
         available: "Yes",
-        image: "https://gfn.ru/media/images/art_image-sons-of-the-forest-63de6e3a.original.jpg",
+        image: "https://www.tiriniti.com/wp-content/uploads/2023/02/sonsoftheforest-1652806471329.jpg",
         description: "Sent to find a missing billionaire on a remote island, you find yourself in a cannibal-infested hellscape. Craft, build, and struggle to survive, alone or with friends, in this terrifying new open-world survival horror simulator.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
