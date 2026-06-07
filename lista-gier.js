@@ -196,6 +196,17 @@ const bazaGier = [
         description: "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
+    {
+        id: 18,
+        title: "Sons of The Forest",
+        price: "€4.00",
+        tags: [],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://gfn.ru/media/images/art_image-sons-of-the-forest-63de6e3a.original.jpg",
+        description: "Sent to find a missing billionaire on a remote island, you find yourself in a cannibal-infested hellscape. Craft, build, and struggle to survive, alone or with friends, in this terrifying new open-world survival horror simulator.",
+        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+    }
 ];
 
 const konfiguracjaTagow = {
