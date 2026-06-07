@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyaro's Sh0p - Product List</title>
     
-    <!-- IKONA STRONY (FAVICON) -->
-    <link rel="icon" href="https://i.pinimg.com/474x/a1/8d/23/a18d2348541eeb8ba8b75e7c4565928f.jpg" type="image/x-icon">
-    
     <style>
         /* CSS RESET & PODSTAWY */
         * {
@@ -287,7 +284,7 @@
         .status-in { color: #10b981; }
         .status-out { color: #ef4444; }
 
-        /* PRZYCISK ZAKUPU (ZABLOKOWANY NA DOLE KARTY) */
+        /* PRZYCISK ZAKUPU */
         .card-buy-btn {
             width: 100%;
             background-color: transparent;
@@ -317,7 +314,7 @@
         }
 
         /* =========================================
-           POWIĘKSZONE OKIENKO (MODAL NA ŚRODKU)
+           OKIENKO INFORMACYJNE (MODAL)
            ========================================= */
         .modal-overlay {
             position: fixed;
@@ -342,6 +339,9 @@
             border: 1px solid #1f2229; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             animation: modalFadeIn 0.2s ease;
+            /* Zabezpieczenie przed ucięciem okienka na telefonie */
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         @keyframes modalFadeIn {
@@ -433,6 +433,51 @@
             background-color: #e11d48;
             border-color: #e11d48;
         }
+
+        /* =========================================
+           RESPONSYWNOŚĆ (EKRANY TELEFONÓW)
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Tytuł nagłówka i padding lekko mniejsze */
+            .hero-title {
+                font-size: 32px;
+            }
+            .hero-section {
+                padding: 40px 10px 30px 10px;
+            }
+            
+            /* Okienko Modalne na telefonie układamy jedno pod drugim */
+            .modal-content-flex {
+                flex-direction: column; /* Ustawia elementy w kolumnie (zdjęcie na górze, tekst na dole) */
+                align-items: center; /* Centruje obrazek */
+                text-align: center; /* Centruje tekst na telefonach */
+            }
+            
+            .modal-image {
+                width: 180px; /* Nieco większe, żeby lepiej wypełniało środek */
+                height: 250px;
+                margin-bottom: 10px;
+            }
+            
+            /* Ceny na telefonie ułożone na środku */
+            .modal-details {
+                width: 100%;
+            }
+            
+            /* Wymuszamy wyśrodkowanie ceny i statusu */
+            .modal-price-row {
+                justify-content: center !important;
+            }
+
+            .modal-features {
+                text-align: left; /* Zostawiamy checkmarki wyrównane do lewej, żeby ładnie wyglądały jako lista */
+                display: inline-block;
+            }
+            
+            .modal-box {
+                padding: 20px; /* Zmniejszamy ramki wewnątrz telefonu */
+            }
+        }
     </style>
 </head>
 <body>
@@ -471,14 +516,12 @@
 
     </div>
 
-    <!-- POWIĘKSZONE OKIENKO (MODAL) NA ŚRODKU -->
     <div class="modal-overlay" id="customAlert">
         <div class="modal-box">
             <div id="modalBody"></div>
         </div>
     </div>
 
-    <!-- POŁĄCZENIE Z PLIKIEM LISTY GIER -->
     <script src="./lista-gier.js"></script>
 
     <script>
@@ -568,7 +611,7 @@
                     
                     <div class="modal-details">
                         <h4>${gra.title}</h4>
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 5px;">
+                        <div class="modal-price-row" style="display: flex; align-items: center; gap: 15px; margin-bottom: 5px;">
                             <span style="font-size: 26px; font-weight: 800; color: #e11d48;">${gra.price}</span>
                             <span style="color: ${statusColor}; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px;">• ${statusText}</span>
                         </div>
@@ -653,7 +696,7 @@
             document.getElementById("licznikGier").innerText = tekstLicznika;
         }
 
-        // TA LINIJKA JEST NAJWAŻNIEJSZA - ODPALA SKLEP
+        // START STRONY
         window.onload = generujSklep;
     </script>
 
