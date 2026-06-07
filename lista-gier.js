@@ -156,7 +156,7 @@ const bazaGier = [
         id: 14,
         title: "Denuvo Bypass Source",
         price: "€50.00",
-        tags: ["special"],
+        tags: ["special", "denuvo"],
         soldCount: 0,
         available: "Yes",
         image: "https://placehold.co/300x400/090a0c/3b82f6?text=Denuvo+Source",
@@ -170,7 +170,7 @@ const bazaGier = [
         tags: ["special"],
         soldCount: 0,
         available: "Yes",
-        image: "https://placehold.co/300x400/090a0c/10b981?text=Games+Source",
+        image: "https://placehold.co/300x400/090a0c/e0a3b2?text=Games+Source",
         description: "The ultimate library secret. Get the exact source we use to supply over 100,000+ games. Perfect for building your own massive collection or starting your own shop.",
         features: ["Access to 100,000+ Games", "Direct Source Link", "All Genres & Platforms"]
     }
