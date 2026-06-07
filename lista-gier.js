@@ -13,7 +13,7 @@ const bazaGier = [
         available: "Yes",
         image: "https://store-images.s-microsoft.com/image/apps.60342.13547047233571036.013c5ec3-a5d7-4e8a-83e7-470299116376.2346f664-c01a-4b06-a92c-4819a43e8f75", 
         description: "Includes a 1-click easy installer. Jump straight into the action and play online with your friends in minutes!",
-        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "Online Multiplayer Enabled", "24/7 Discord Support"]
+        features: ["Safe & Instant Delivery", "DLCs included", "1-Click Easy Installer", "Online Multiplayer Enabled", "24/7 Discord Support"]
     },
     {
         id: 2,
@@ -48,7 +48,7 @@ const bazaGier = [
         available: "Yes",
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202508/1316/3302f35b66691aa405aee31624c0c95fe73081be8e0c75bb.png",
         description: "Game + Bypass included. Embark on a journey that begins with Batman's origins. Young Bruce Wayne trains with the League of Shadows, becomes Gotham's hero, and forges a new family of allies with Jim Gordon, Catwoman, Robin, Nightwing, and Batgirl. Face the ever-increasing threat of Batman's enemies, facing the Joker, Penguin, Mr. Freeze, Poison Ivy, Bane, and many more.",
-        features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "1-Click Easy Installer", "24/7 Discord Support"]
+        features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "1-Click Easy Installer (Game + Bypass)", "24/7 Discord Support"]
     },
     {
         id: 5,
@@ -150,7 +150,7 @@ const bazaGier = [
         available: "No",
         image: "https://m.media-amazon.com/images/M/MV5BOWY5M2EyYTgtZGE3MC00ZjgyLTk3NWEtMGRiNTAwYmRkMWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         description: "Instantly unlocks all extra DLC content for your base game.",
-        features: ["Instant DLC Unlock", "Works with latest patches", "24/7 Discord Support"]
+        features: ["Instant DLCs Unlock", "Works with latest patches", "24/7 Discord Support"]
     },
     {
         id: 14,
@@ -216,7 +216,7 @@ const bazaGier = [
         available: "Yes",
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202305/2308/06b354c8015b3c71e54f43aa883aab4641285d4a91734681.png",
         description: "You are Geppetto's puppet, entangled in a web of lies with incomprehensible monsters and unbelievable characters whom you will have to face during the events that shake the world of Lies of P.",
-        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+        features: ["Safe & Instant Delivery", "DLCs included", "1-Click Easy Installer", "24/7 Discord Support"]
     },
     {
         id: 20,
