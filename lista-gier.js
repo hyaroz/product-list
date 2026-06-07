@@ -195,7 +195,7 @@ const bazaGier = [
         image: "https://image.api.playstation.com/cdn/UP2456/CUSA06840_00/0WuZecPtRr7aEsQPv2nJqiPa2ZvDOpYm.png",
         description: "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-    }
+    },
     {
         id: 18,
         title: "Sons of The Forest",
