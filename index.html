@@ -356,6 +356,29 @@
         }
 
         /* =========================================
+           STOPKA (NOWOŚĆ - LICZNIK WIZYT)
+           ========================================= */
+        .shop-footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #1f2229;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .shop-footer p {
+            color: #64748b;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        /* =========================================
            POWIĘKSZONE OKIENKO (MODAL NA ŚRODKU)
            ========================================= */
         .modal-overlay {
@@ -503,14 +526,15 @@
         </div>
 
         <div class="search-toolbar">
-            <input type="text" id="wyszukiwarka" class="search-input" placeholder="Search for a game..." 
+            <!-- ZMIANA WYSZUKIWARKI: Zmieniony tekst "game" na "product" -->
+            <input type="text" id="wyszukiwarka" class="search-input" placeholder="Search for a product..." 
                    onfocus="this.value=''; this.placeholder=''; filtrujGry();" 
-                   onblur="this.placeholder='Search for a game...'" 
+                   onblur="this.placeholder='Search for a product...'" 
                    onkeyup="filtrujGry()">
 
             <div class="tags-wrapper">
                 <button class="filter-btn btn-all active" onclick="ustawTag('all', this)">All</button>
-                <button class="filter-btn btn-new" onclick="ustawTag('new', this)">🟢 New</button> <!-- DODANY PRZYCISK NEW -->
+                <button class="filter-btn btn-new" onclick="ustawTag('new', this)">🟢 New</button>
                 <button class="filter-btn btn-popular" onclick="ustawTag('popular', this)">⭐ Popular</button>
                 <button class="filter-btn btn-requested" onclick="ustawTag('requested', this)">❤️ Requested</button>
                 <button class="filter-btn btn-denuvo" onclick="ustawTag('denuvo', this)">🛡️ Denuvo</button>
@@ -527,6 +551,13 @@
         <!-- KONTENER NA PRZYCISKI STRON (1, 2, 3...) -->
         <div class="pagination-container" id="kontenerPaginacji"></div>
 
+        <!-- NOWOŚĆ: STOPKA Z LICZNIKIEM WIZYT -->
+        <div class="shop-footer">
+            <p>Total Store Visits</p>
+            <!-- Ten obrazek generuje się sam, łączy się z serwerem i liczy wejścia! -->
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhyaroz.github.io%2Fproduct-list&count_bg=%23e11d48&title_bg=%231f2229&icon=&icon_color=%23E7E7E7&title=Visits&edge_flat=true" alt="Visits">
+        </div>
+
     </div>
 
     <!-- POWIĘKSZONE OKIENKO (MODAL) -->
@@ -541,30 +572,25 @@
     <script>
         let aktywnyTag = "all";
         let aktualnaStrona = 1;
-        const produktyNaStrone = 12; // MAX 12 PRODUKTÓW NA STRONIE!
+        const produktyNaStrone = 12;
 
         function generujSklep() {
             const kontener = document.getElementById("kontenerGier");
             if (!kontener) return;
             kontener.innerHTML = ""; 
 
-            // =========================================================
-            // INTELIGENTNE SORTOWANIE (New na górze, reszta po soldCount)
-            // =========================================================
             bazaGier.sort((a, b) => {
                 let aNew = a.tags && a.tags.includes("new");
                 let bNew = b.tags && b.tags.includes("new");
 
-                if (aNew && !bNew) return -1; // Jeśli 'a' ma New, ląduje wyżej
-                if (!aNew && bNew) return 1;  // Jeśli 'b' ma New, ląduje wyżej
+                if (aNew && !bNew) return -1;
+                if (!aNew && bNew) return 1;  
                 
-                return b.soldCount - a.soldCount; // Jeśli oba mają New lub oba nie mają, decyduje soldCount
+                return b.soldCount - a.soldCount;
             });
 
-            // Pobieramy wpisany tekst z wyszukiwarki
             let wpisanyTekst = document.getElementById("wyszukiwarka").value.toLowerCase();
 
-            // Przeprowadzamy filtrację, aby wiedzieć, ile gier w ogóle pasuje
             let przefiltrowaneGry = bazaGier.filter(gra => {
                 let tytulGry = gra.title.toLowerCase();
                 let pasujeTekst = tytulGry.includes(wpisanyTekst);
@@ -572,19 +598,15 @@
                 return pasujeTekst && pasujeTag;
             });
 
-            // Aktualizujemy główny licznik na środku ekranu
             ZaktualizujLicznikTekst(przefiltrowaneGry.length);
 
-            // Obliczamy ile stron potrzebujemy
             let lacznieStron = Math.ceil(przefiltrowaneGry.length / produktyNaStrone);
             if (aktualnaStrona > lacznieStron) aktualnaStrona = Math.max(1, lacznieStron);
 
-            // Wycinamy tylko 12 gier dla AKTUALNEJ strony
             let indeksPoczatkowy = (aktualnaStrona - 1) * produktyNaStrone;
             let indeksKoncowy = indeksPoczatkowy + produktyNaStrone;
             let gryDoWyswietlenia = przefiltrowaneGry.slice(indeksPoczatkowy, indeksKoncowy);
 
-            // Generujemy HTML tylko dla tych 12 gier
             gryDoWyswietlenia.forEach(gra => {
                 let badgesWewnatrzHTML = "";
                 if (gra.tags && gra.tags.length > 0) {
@@ -633,17 +655,15 @@
                 kontener.appendChild(karta);
             });
 
-            // Rysujemy przyciski stron (1, 2, 3...)
             GenerujPrzyciskiPaginacji(lacznieStron);
         }
 
-        // FUNKCJA GENERUJĄCA NUMERKI STRON NA DOLE
         function GenerujPrzyciskiPaginacji(lacznieStron) {
             const kontenerPaginacji = document.getElementById("kontenerPaginacji");
             if (!kontenerPaginacji) return;
             kontenerPaginacji.innerHTML = "";
 
-            if (lacznieStron <= 1) return; // Jeśli jest tylko 1 strona, ukrywamy numerki
+            if (lacznieStron <= 1) return;
 
             for (let i = 1; i <= lacznieStron; i++) {
                 const przycisk = document.createElement("button");
@@ -654,7 +674,6 @@
                 przycisk.onclick = function() {
                     aktualnaStrona = i;
                     generujSklep();
-                    // Automatyczne przewijanie na górę strony po zmianie karty gier
                     window.scrollTo({ top: 350, behavior: 'smooth' });
                 };
 
@@ -738,7 +757,7 @@
 
         function ustawTag(tag, kliknietyPrzycisk) {
             aktywnyTag = tag;
-            aktualnaStrona = 1; // Po kliknięciu filtra resetujemy do 1 strony!
+            aktualnaStrona = 1; 
             
             let przyciski = document.getElementsByClassName("filter-btn");
             for (let i = 0; i < przyciski.length; i++) {
@@ -751,7 +770,7 @@
         }
 
         function filtrujGry() {
-            aktualnaStrona = 1; // Po wpisaniu tekstu resetujemy do 1 strony!
+            aktualnaStrona = 1; 
             generujSklep();
         }
 
