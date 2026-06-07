@@ -450,7 +450,6 @@
         </div>
 
         <div class="search-toolbar">
-            <!-- DODANO MAGICZNE ZAKLĘCIA DO ZNIKANIA TEKSTU W WYSZUKIWARCE -->
             <input type="text" id="wyszukiwarka" class="search-input" placeholder="Search for a game..." 
                    onfocus="this.value=''; this.placeholder=''; filtrujGry();" 
                    onblur="this.placeholder='Search for a game...'" 
@@ -479,6 +478,7 @@
         </div>
     </div>
 
+    <!-- POŁĄCZENIE Z PLIKIEM LISTY GIER -->
     <script src="./lista-gier.js"></script>
 
     <script>
@@ -652,6 +652,9 @@
 
             document.getElementById("licznikGier").innerText = tekstLicznika;
         }
+
+        // TA LINIJKA JEST NAJWAŻNIEJSZA - ODPALA SKLEP
+        window.onload = generujSklep;
     </script>
 
 </body>
