@@ -151,6 +151,28 @@ const bazaGier = [
         image: "https://m.media-amazon.com/images/M/MV5BOWY5M2EyYTgtZGE3MC00ZjgyLTk3NWEtMGRiNTAwYmRkMWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         description: "Instantly unlocks all extra DLC content for your base game.",
         features: ["Instant DLC Unlock", "Works with latest patches", "24/7 Discord Support"]
+    },
+    {
+        id: 14,
+        title: "Denuvo Bypass Source",
+        price: "€50.00",
+        tags: ["special"],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://placehold.co/300x400/090a0c/3b82f6?text=Denuvo+Source",
+        description: "Exclusive access to our private source for Denuvo-protected games. Unlock the secret to obtaining over 75+ premium Denuvo bypassed titles directly.",
+        features: ["Access to 75+ Denuvo Games", "Direct Source Link", "Verified & Safe Provider"]
+    },
+    {
+        id: 15,
+        title: "Ultimate Games Source",
+        price: "€100.00",
+        tags: ["special"],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://placehold.co/300x400/090a0c/10b981?text=Games+Source",
+        description: "The ultimate library secret. Get the exact source we use to supply over 100,000+ games. Perfect for building your own massive collection or starting your own shop.",
+        features: ["Access to 100,000+ Games", "Direct Source Link", "All Genres & Platforms"]
     }
 ];
 
