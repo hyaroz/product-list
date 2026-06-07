@@ -133,12 +133,12 @@ const bazaGier = [
     {
         id: 12,
         title: "Popular Games Pack",
-        price: "€7.50",
+        price: "€11.50",
         tags: ["special"],
         soldCount: 0,
         available: "Yes",
         image: "https://placehold.co/300x400/090a0c/e0a3b2?text=Popular+Games+Pack",
-        description: "Grants access to Forza Horizon 6, Subnautica 2 and Slay The Spire 2.",
+        description: "Grants access to LEGO® Batman™: Legacy of the Dark Knight and Forza Horizon 6.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     },
     {
