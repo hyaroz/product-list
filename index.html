@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyaro's Sh0p - Product List</title>
     
+    <!-- IKONA STRONY (FAVICON) -->
     <link rel="icon" href="https://i.pinimg.com/474x/a1/8d/23/a18d2348541eeb8ba8b75e7c4565928f.jpg" type="image/x-icon">
     
     <style>
@@ -161,6 +162,7 @@
             color: white;
             border-color: #e11d48;
         }
+        .filter-btn.btn-new.active { background-color: #2d333b; color: #22c55e; border-color: #22c55e; }
         .filter-btn.btn-popular.active { background-color: #2d333b; color: #eab308; border-color: #eab308; }
         .filter-btn.btn-requested.active { background-color: #2d333b; color: #14b8a6; border-color: #14b8a6; }
         .filter-btn.btn-denuvo.active { background-color: #2d333b; color: #3b82f6; border-color: #3b82f6; }
@@ -233,6 +235,8 @@
             backdrop-filter: blur(4px);
         }
 
+        /* KOLORY DLA PLAKIETEK */
+        .badge-new { border: 1px solid #22c55e; color: #22c55e; }
         .badge-popular { border: 1px solid #eab308; color: #eab308; }
         .badge-requested { border: 1px solid #14b8a6; color: #14b8a6; }
         .badge-denuvo { border: 1px solid #3b82f6; color: #3b82f6; }
@@ -286,7 +290,7 @@
         .status-in { color: #10b981; }
         .status-out { color: #ef4444; }
 
-        /* PRZYCISK ZAKUPU (ZABLOKOWANY NA DOLE KARTY) */
+        /* PRZYCISK ZAKUPU */
         .card-buy-btn {
             width: 100%;
             background-color: transparent;
@@ -316,6 +320,42 @@
         }
 
         /* =========================================
+           KONTENER STRON (PAGINACJA)
+           ========================================= */
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+            width: 100%;
+        }
+
+        .page-btn {
+            background-color: #121418;
+            color: #94a3b8;
+            border: 1px solid #22262e;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .page-btn:hover {
+            color: #ffffff;
+            border-color: #4b5563;
+            background-color: #1f2229;
+        }
+
+        .page-btn.active {
+            background-color: #e11d48;
+            color: #ffffff;
+            border-color: #e11d48;
+        }
+
+        /* =========================================
            POWIĘKSZONE OKIENKO (MODAL NA ŚRODKU)
            ========================================= */
         .modal-overlay {
@@ -341,7 +381,6 @@
             border: 1px solid #1f2229; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             animation: modalFadeIn 0.2s ease;
-            /* Zabezpieczenie przed ucięciem okienka na telefonie */
             max-height: 90vh;
             overflow-y: auto;
         }
@@ -436,39 +475,16 @@
             border-color: #e11d48;
         }
 
-        /* =========================================
-           RESPONSYWNOŚĆ (EKRANY TELEFONÓW)
-           ========================================= */
+        /* RESPONSYWNOŚĆ (EKRANY TELEFONÓW) */
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 32px;
-            }
-            .hero-section {
-                padding: 40px 10px 30px 10px;
-            }
-            .modal-content-flex {
-                flex-direction: column; 
-                align-items: center; 
-                text-align: center; 
-            }
-            .modal-image {
-                width: 180px; 
-                height: 250px;
-                margin-bottom: 10px;
-            }
-            .modal-details {
-                width: 100%;
-            }
-            .modal-price-row {
-                justify-content: center !important;
-            }
-            .modal-features {
-                text-align: left; 
-                display: inline-block;
-            }
-            .modal-box {
-                padding: 20px; 
-            }
+            .hero-title { font-size: 32px; }
+            .hero-section { padding: 40px 10px 30px 10px; }
+            .modal-content-flex { flex-direction: column; align-items: center; text-align: center; }
+            .modal-image { width: 180px; height: 250px; margin-bottom: 10px; }
+            .modal-details { width: 100%; }
+            .modal-price-row { justify-content: center !important; }
+            .modal-features { text-align: left; display: inline-block; }
+            .modal-box { padding: 20px; }
         }
     </style>
 </head>
@@ -494,6 +510,7 @@
 
             <div class="tags-wrapper">
                 <button class="filter-btn btn-all active" onclick="ustawTag('all', this)">All</button>
+                <button class="filter-btn btn-new" onclick="ustawTag('new', this)">🟢 New</button> <!-- DODANY PRZYCISK NEW -->
                 <button class="filter-btn btn-popular" onclick="ustawTag('popular', this)">⭐ Popular</button>
                 <button class="filter-btn btn-requested" onclick="ustawTag('requested', this)">❤️ Requested</button>
                 <button class="filter-btn btn-denuvo" onclick="ustawTag('denuvo', this)">🛡️ Denuvo</button>
@@ -504,10 +521,15 @@
             <span class="counter-text" id="licznikGier">Showing 0 games</span>
         </div>
 
+        <!-- SIATKA GIER -->
         <div class="games-grid" id="kontenerGier"></div>
+
+        <!-- KONTENER NA PRZYCISKI STRON (1, 2, 3...) -->
+        <div class="pagination-container" id="kontenerPaginacji"></div>
 
     </div>
 
+    <!-- POWIĘKSZONE OKIENKO (MODAL) -->
     <div class="modal-overlay" id="customAlert">
         <div class="modal-box">
             <div id="modalBody"></div>
@@ -518,15 +540,52 @@
 
     <script>
         let aktywnyTag = "all";
+        let aktualnaStrona = 1;
+        const produktyNaStrone = 12; // MAX 12 PRODUKTÓW NA STRONIE!
 
         function generujSklep() {
             const kontener = document.getElementById("kontenerGier");
             if (!kontener) return;
             kontener.innerHTML = ""; 
 
-            bazaGier.sort((a, b) => b.soldCount - a.soldCount);
+            // =========================================================
+            // INTELIGENTNE SORTOWANIE (New na górze, reszta po soldCount)
+            // =========================================================
+            bazaGier.sort((a, b) => {
+                let aNew = a.tags && a.tags.includes("new");
+                let bNew = b.tags && b.tags.includes("new");
 
-            bazaGier.forEach(gra => {
+                if (aNew && !bNew) return -1; // Jeśli 'a' ma New, ląduje wyżej
+                if (!aNew && bNew) return 1;  // Jeśli 'b' ma New, ląduje wyżej
+                
+                return b.soldCount - a.soldCount; // Jeśli oba mają New lub oba nie mają, decyduje soldCount
+            });
+
+            // Pobieramy wpisany tekst z wyszukiwarki
+            let wpisanyTekst = document.getElementById("wyszukiwarka").value.toLowerCase();
+
+            // Przeprowadzamy filtrację, aby wiedzieć, ile gier w ogóle pasuje
+            let przefiltrowaneGry = bazaGier.filter(gra => {
+                let tytulGry = gra.title.toLowerCase();
+                let pasujeTekst = tytulGry.includes(wpisanyTekst);
+                let pasujeTag = (aktywnyTag === "all" || (gra.tags && gra.tags.includes(aktywnyTag)));
+                return pasujeTekst && pasujeTag;
+            });
+
+            // Aktualizujemy główny licznik na środku ekranu
+            ZaktualizujLicznikTekst(przefiltrowaneGry.length);
+
+            // Obliczamy ile stron potrzebujemy
+            let lacznieStron = Math.ceil(przefiltrowaneGry.length / produktyNaStrone);
+            if (aktualnaStrona > lacznieStron) aktualnaStrona = Math.max(1, lacznieStron);
+
+            // Wycinamy tylko 12 gier dla AKTUALNEJ strony
+            let indeksPoczatkowy = (aktualnaStrona - 1) * produktyNaStrone;
+            let indeksKoncowy = indeksPoczatkowy + produktyNaStrone;
+            let gryDoWyswietlenia = przefiltrowaneGry.slice(indeksPoczatkowy, indeksKoncowy);
+
+            // Generujemy HTML tylko dla tych 12 gier
+            gryDoWyswietlenia.forEach(gra => {
                 let badgesWewnatrzHTML = "";
                 if (gra.tags && gra.tags.length > 0) {
                     gra.tags.forEach(pojedynczyTag => {
@@ -545,11 +604,9 @@
                 let dostepnoscClass = gra.available === "Yes" ? "status-in" : "status-out";
                 let dostepnoscTekst = gra.available === "Yes" ? "In Stock" : "Out of Stock";
                 let napisRequestedHtml = gra.requestedBy ? `<div class="card-requested">Requested by: <strong>${gra.requestedBy}</strong></div>` : "";
-                let wszystkieTagiJakoTekst = gra.tags ? gra.tags.join(',') : "";
 
                 const karta = document.createElement("div");
                 karta.className = "game-card";
-                karta.setAttribute("data-tags", wszystkieTagiJakoTekst); 
 
                 karta.innerHTML = `
                     <div class="card-image-wrapper">
@@ -576,7 +633,45 @@
                 kontener.appendChild(karta);
             });
 
-            filtrujGry();
+            // Rysujemy przyciski stron (1, 2, 3...)
+            GenerujPrzyciskiPaginacji(lacznieStron);
+        }
+
+        // FUNKCJA GENERUJĄCA NUMERKI STRON NA DOLE
+        function GenerujPrzyciskiPaginacji(lacznieStron) {
+            const kontenerPaginacji = document.getElementById("kontenerPaginacji");
+            if (!kontenerPaginacji) return;
+            kontenerPaginacji.innerHTML = "";
+
+            if (lacznieStron <= 1) return; // Jeśli jest tylko 1 strona, ukrywamy numerki
+
+            for (let i = 1; i <= lacznieStron; i++) {
+                const przycisk = document.createElement("button");
+                przycisk.className = "page-btn";
+                if (i === aktualnaStrona) przycisk.classList.add("active");
+                przycisk.innerText = i;
+                
+                przycisk.onclick = function() {
+                    aktualnaStrona = i;
+                    generujSklep();
+                    // Automatyczne przewijanie na górę strony po zmianie karty gier
+                    window.scrollTo({ top: 350, behavior: 'smooth' });
+                };
+
+                kontenerPaginacji.appendChild(przycisk);
+            }
+        }
+
+        function ZaktualizujLicznikTekst(licznikWidocznych) {
+            let tekstLicznika = "";
+            if (aktywnyTag === "all") {
+                tekstLicznika = "Showing " + licznikWidocznych + " product" + (licznikWidocznych !== 1 ? "s" : "");
+            } else if (aktywnyTag === "special") {
+                tekstLicznika = "Showing " + licznikWidocznych + " offer" + (licznikWidocznych !== 1 ? "s" : "");
+            } else {
+                tekstLicznika = "Showing " + licznikWidocznych + " game" + (licznikWidocznych !== 1 ? "s" : "");
+            }
+            document.getElementById("licznikGier").innerText = tekstLicznika;
         }
 
         function klikniecieCeny(idGry) {
@@ -643,6 +738,7 @@
 
         function ustawTag(tag, kliknietyPrzycisk) {
             aktywnyTag = tag;
+            aktualnaStrona = 1; // Po kliknięciu filtra resetujemy do 1 strony!
             
             let przyciski = document.getElementsByClassName("filter-btn");
             for (let i = 0; i < przyciski.length; i++) {
@@ -651,44 +747,14 @@
             
             kliknietyPrzycisk.classList.add("active");
             
-            filtrujGry();
+            generujSklep();
         }
 
         function filtrujGry() {
-            let wpisanyTekst = document.getElementById("wyszukiwarka").value.toLowerCase();
-            let gry = document.getElementsByClassName("game-card");
-            let licznikWidocznych = 0;
-
-            for (let i = 0; i < gry.length; i++) {
-                let tytulGier = gry[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
-                
-                let tagiGryString = gry[i].getAttribute("data-tags");
-                let listaTagowTejGry = tagiGryString ? tagiGryString.split(',') : [];
-
-                let pasujeTekst = tytulGier.includes(wpisanyTekst);
-                let pasujeTag = (aktywnyTag === "all" || listaTagowTejGry.includes(aktywnyTag));
-
-                if (pasujeTekst && pasujeTag) {
-                    gry[i].style.display = "flex"; 
-                    licznikWidocznych++;            
-                } else {
-                    gry[i].style.display = "none";  
-                }
-            }
-
-            let tekstLicznika = "";
-            if (aktywnyTag === "all") {
-                tekstLicznika = "Showing " + licznikWidocznych + " product" + (licznikWidocznych !== 1 ? "s" : "");
-            } else if (aktywnyTag === "special") {
-                tekstLicznika = "Showing " + licznikWidocznych + " offer" + (licznikWidocznych !== 1 ? "s" : "");
-            } else {
-                tekstLicznika = "Showing " + licznikWidocznych + " game" + (licznikWidocznych !== 1 ? "s" : "");
-            }
-
-            document.getElementById("licznikGier").innerText = tekstLicznika;
+            aktualnaStrona = 1; // Po wpisaniu tekstu resetujemy do 1 strony!
+            generujSklep();
         }
 
-        // WŁĄCZNIK CAŁEGO SKLEPU JEST TUTAJ!
         window.onload = generujSklep;
     </script>
 
