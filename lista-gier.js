@@ -68,7 +68,7 @@ const bazaGier = [
         tags: ["special"],
         soldCount: 1,
         available: "Yes",
-        image: "https://placehold.co/300x400/090a0c/e0a3b2?text=VIP+Lifetime",
+        image: "https://placehold.co/300x400/090a0c/FFD700?text=VIP+Lifetime",
         description: "Grants permanent access to every game added to our shop's library. <strong>Note:</strong> Games with Denuvo protection are not included in this package.",
         features: ["Instant Library Access", "Free Future Updates", "Priority VIP Support Role"]
     },
