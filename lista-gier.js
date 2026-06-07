@@ -140,6 +140,17 @@ const bazaGier = [
         image: "https://placehold.co/300x400/090a0c/e0a3b2?text=Popular+Games+Pack",
         description: "Grants access to Forza Horizon 6, Subnautica 2 and Slay The Spire 2.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+    },
+    {
+        id: 13,
+        title: "The Binding of Isaac: Rebirth",
+        price: "€5.00",
+        tags: ["dlc"],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://m.media-amazon.com/images/M/MV5BOWY5M2EyYTgtZGE3MC00ZjgyLTk3NWEtMGRiNTAwYmRkMWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        description: "Instantly unlocks all extra DLC content for your base game.",
+        features: ["Instant DLC Unlock", "Works with latest patches", "24/7 Discord Support"]
     }
 ];
 
