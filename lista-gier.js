@@ -232,6 +232,7 @@ const bazaGier = [
 ];
 
 const konfiguracjaTagow = {
+    "new": { klasa: "badge-new", tekst: "🟢 New" },
     "popular": { klasa: "badge-popular", tekst: "⭐ Popular" },
     "requested": { klasa: "badge-requested", tekst: "❤️ Requested" },
     "denuvo": { klasa: "badge-denuvo", tekst: "🛡️ Denuvo" },
