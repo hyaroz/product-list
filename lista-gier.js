@@ -188,7 +188,7 @@ const bazaGier = [
     {
         id: 17,
         title: "Stardew Valley",
-        price: "€3.50",
+        price: "€2.50",
         tags: [],
         soldCount: 0,
         available: "Yes",
@@ -199,7 +199,7 @@ const bazaGier = [
     {
         id: 18,
         title: "Sons of The Forest",
-        price: "€4.00",
+        price: "€3.50",
         tags: [],
         soldCount: 0,
         available: "Yes",
