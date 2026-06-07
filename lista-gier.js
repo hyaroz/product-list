@@ -184,6 +184,17 @@ const bazaGier = [
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202408/2610/16aadf49a4274d8dfb12049e6478e587ced71ccbc10ae96a.png",
         description: "Return to the Valley of Mines in a faithful remake of the legendary classic that shaped the RPG genre. Explore a handcrafted, organic open world that dynamically responds to your actions, guaranteeing a raw, unconstrained experience.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+    },
+    {
+        id: 17,
+        title: "Stardew Valley",
+        price: "€3.50",
+        tags: [],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://image.api.playstation.com/cdn/UP2456/CUSA06840_00/0WuZecPtRr7aEsQPv2nJqiPa2ZvDOpYm.png",
+        description: "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?",
+        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
 
