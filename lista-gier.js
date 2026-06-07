@@ -173,6 +173,17 @@ const bazaGier = [
         image: "https://placehold.co/300x400/090a0c/e0a3b2?text=Ultimate+Games+Source",
         description: "The ultimate library secret. Get the exact source we use to supply over 100,000+ games. Perfect for building your own massive collection or starting your own shop.",
         features: ["Access to 100,000+ Games", "Direct Source Link", "All Genres & Platforms"]
+    },
+    {
+        id: 16,
+        title: "Gothic Remake",
+        price: "€5.00",
+        tags: [],
+        soldCount: 1,
+        available: "Yes",
+        image: "https://image.api.playstation.com/vulcan/ap/rnd/202408/2610/16aadf49a4274d8dfb12049e6478e587ced71ccbc10ae96a.png",
+        description: "Return to the Valley of Mines in a faithful remake of the legendary classic that shaped the RPG genre. Explore a handcrafted, organic open world that dynamically responds to your actions, guaranteeing a raw, unconstrained experience.",
+        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
 
