@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyaro's Sh0p - Product List</title>
     
+    <link rel="icon" href="https://i.pinimg.com/474x/a1/8d/23/a18d2348541eeb8ba8b75e7c4565928f.jpg" type="image/x-icon">
+    
     <style>
         /* CSS RESET & PODSTAWY */
         * {
@@ -284,7 +286,7 @@
         .status-in { color: #10b981; }
         .status-out { color: #ef4444; }
 
-        /* PRZYCISK ZAKUPU */
+        /* PRZYCISK ZAKUPU (ZABLOKOWANY NA DOLE KARTY) */
         .card-buy-btn {
             width: 100%;
             background-color: transparent;
@@ -314,7 +316,7 @@
         }
 
         /* =========================================
-           OKIENKO INFORMACYJNE (MODAL)
+           POWIĘKSZONE OKIENKO (MODAL NA ŚRODKU)
            ========================================= */
         .modal-overlay {
             position: fixed;
@@ -438,44 +440,34 @@
            RESPONSYWNOŚĆ (EKRANY TELEFONÓW)
            ========================================= */
         @media (max-width: 768px) {
-            /* Tytuł nagłówka i padding lekko mniejsze */
             .hero-title {
                 font-size: 32px;
             }
             .hero-section {
                 padding: 40px 10px 30px 10px;
             }
-            
-            /* Okienko Modalne na telefonie układamy jedno pod drugim */
             .modal-content-flex {
-                flex-direction: column; /* Ustawia elementy w kolumnie (zdjęcie na górze, tekst na dole) */
-                align-items: center; /* Centruje obrazek */
-                text-align: center; /* Centruje tekst na telefonach */
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center; 
             }
-            
             .modal-image {
-                width: 180px; /* Nieco większe, żeby lepiej wypełniało środek */
+                width: 180px; 
                 height: 250px;
                 margin-bottom: 10px;
             }
-            
-            /* Ceny na telefonie ułożone na środku */
             .modal-details {
                 width: 100%;
             }
-            
-            /* Wymuszamy wyśrodkowanie ceny i statusu */
             .modal-price-row {
                 justify-content: center !important;
             }
-
             .modal-features {
-                text-align: left; /* Zostawiamy checkmarki wyrównane do lewej, żeby ładnie wyglądały jako lista */
+                text-align: left; 
                 display: inline-block;
             }
-            
             .modal-box {
-                padding: 20px; /* Zmniejszamy ramki wewnątrz telefonu */
+                padding: 20px; 
             }
         }
     </style>
@@ -696,7 +688,7 @@
             document.getElementById("licznikGier").innerText = tekstLicznika;
         }
 
-        // START STRONY
+        // WŁĄCZNIK CAŁEGO SKLEPU JEST TUTAJ!
         window.onload = generujSklep;
     </script>
 
