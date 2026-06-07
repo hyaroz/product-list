@@ -150,3 +150,4 @@ const konfiguracjaTagow = {
     "dlc": { klasa: "badge-dlc", tekst: "🧩 DLC's" },
     "special": { klasa: "badge-special", tekst: "💎 Special" }
 };
+
