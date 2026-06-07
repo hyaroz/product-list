@@ -206,6 +206,17 @@ const bazaGier = [
         image: "https://www.tiriniti.com/wp-content/uploads/2023/02/sonsoftheforest-1652806471329.jpg",
         description: "Sent to find a missing billionaire on a remote island, you find yourself in a cannibal-infested hellscape. Craft, build, and struggle to survive, alone or with friends, in this terrifying new open-world survival horror simulator.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+    },
+    {
+        id: 19,
+        title: "Lies of P",
+        price: "€5.00",
+        tags: [],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://image.api.playstation.com/vulcan/ap/rnd/202305/2308/06b354c8015b3c71e54f43aa883aab4641285d4a91734681.png",
+        description: "Lies of P is a captivating souls-like game based on the Pinocchio novel, reimagined in the dark and majestic style of the Belle Époque.",
+        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
 
