@@ -47,7 +47,7 @@ const bazaGier = [
         soldCount: 3,
         available: "Yes",
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202508/1316/3302f35b66691aa405aee31624c0c95fe73081be8e0c75bb.png",
-        description: "Game + Bypass included. Embark on a journey that begins with Batman's origins. Young Bruce Wayne trains with the League of Shadows, becomes Gotham's hero, and forges a new family of allies with Jim Gordon, Catwoman, Robin, Nightwing, and Batgirl. Face the ever-increasing threat of Batman's enemies, facing the Joker, Penguin, Mr. Freeze, Poison Ivy, Bane, and many more.",
+        description: "Embark on a journey that begins with Batman's origins. Young Bruce Wayne trains with the League of Shadows, becomes Gotham's hero, and forges a new family of allies with Jim Gordon, Catwoman, Robin, Nightwing, and Batgirl. Face the ever-increasing threat of Batman's enemies, facing the Joker, Penguin, Mr. Freeze, Poison Ivy, Bane, and many more.",
         features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "1-Click Easy Installer (Game + Bypass)", "24/7 Discord Support"]
     },
     {
