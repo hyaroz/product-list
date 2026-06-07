@@ -217,6 +217,17 @@ const bazaGier = [
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202305/2308/06b354c8015b3c71e54f43aa883aab4641285d4a91734681.png",
         description: "You are Geppetto's puppet, entangled in a web of lies with incomprehensible monsters and unbelievable characters whom you will have to face during the events that shake the world of Lies of P.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+    },
+    {
+        id: 20,
+        title: "DARK SOULS™ III",
+        price: "€6.50",
+        tags: [],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://image.api.playstation.com/cdn/EP0700/CUSA03365_00/OFMeAw2KhrdaEZAjW1f3tCIXbogkLpTC.png",
+        description: "The fires are dying, and the world is crumbling. Venture into a land filled with gigantic enemies and locations. Players will be immersed in a world of epic atmosphere and darkness, thanks to faster gameplay and increased combat intensity. Both fans and newcomers will fully immerse themselves in this game, renowned for its replayability and stunning graphics. Only embers remain... Prepare for battle once more and welcome the darkness!",
+        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
 
