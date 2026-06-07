@@ -215,7 +215,7 @@ const bazaGier = [
         soldCount: 0,
         available: "Yes",
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202305/2308/06b354c8015b3c71e54f43aa883aab4641285d4a91734681.png",
-        description: "Lies of P is a captivating souls-like game based on the Pinocchio novel, reimagined in the dark and majestic style of the Belle Époque.",
+        description: "You are Geppetto's puppet, entangled in a web of lies with incomprehensible monsters and unbelievable characters whom you will have to face during the events that shake the world of Lies of P.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
