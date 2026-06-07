@@ -12,7 +12,7 @@ const bazaGier = [
         soldCount: 6,
         available: "Yes",
         image: "https://store-images.s-microsoft.com/image/apps.60342.13547047233571036.013c5ec3-a5d7-4e8a-83e7-470299116376.2346f664-c01a-4b06-a92c-4819a43e8f75", 
-        description: "Includes a 1-click easy installer. Jump straight into the action and play online with your friends in minutes!",
+        description: "Explore the breathtaking landscapes of Japan behind the wheel of over 550 real cars and become a racing legend in the biggest open-world adventure in Forza Horizon history.",
         features: ["Safe & Instant Delivery", "DLCs included", "1-Click Easy Installer", "Online Multiplayer Enabled", "24/7 Discord Support"]
     },
     {
