@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyaro's Sh0p - Product List</title>
     
-    <!-- IKONA STRONY (FAVICON) -->
     <link rel="icon" href="https://i.pinimg.com/474x/a1/8d/23/a18d2348541eeb8ba8b75e7c4565928f.jpg" type="image/x-icon">
     
     <style>
@@ -356,26 +355,24 @@
         }
 
         /* =========================================
-           STOPKA (NOWOŚĆ - LICZNIK WIZYT)
+           STOPKA (LICZNIK WIZYT)
            ========================================= */
         .shop-footer {
-            margin-top: 60px;
+            margin-top: 80px;
             padding-top: 30px;
             border-top: 1px solid #1f2229;
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 20px;
         }
 
-        .shop-footer p {
-            color: #64748b;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0;
+        .visitor-badge-img {
+            /* Powiększenie i dodanie krągłości, żeby wyglądał jak część interfejsu */
+            transform: scale(1.3);
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         /* =========================================
@@ -526,7 +523,6 @@
         </div>
 
         <div class="search-toolbar">
-            <!-- ZMIANA WYSZUKIWARKI: Zmieniony tekst "game" na "product" -->
             <input type="text" id="wyszukiwarka" class="search-input" placeholder="Search for a product..." 
                    onfocus="this.value=''; this.placeholder=''; filtrujGry();" 
                    onblur="this.placeholder='Search for a product...'" 
@@ -545,22 +541,16 @@
             <span class="counter-text" id="licznikGier">Showing 0 games</span>
         </div>
 
-        <!-- SIATKA GIER -->
         <div class="games-grid" id="kontenerGier"></div>
 
-        <!-- KONTENER NA PRZYCISKI STRON (1, 2, 3...) -->
         <div class="pagination-container" id="kontenerPaginacji"></div>
 
-        <!-- NOWOŚĆ: STOPKA Z LICZNIKIEM WIZYT -->
         <div class="shop-footer">
-            <p>Total Store Visits</p>
-            <!-- Ten obrazek generuje się sam, łączy się z serwerem i liczy wejścia! -->
-            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fhyaroz.github.io%2Fproduct-list&count_bg=%23e11d48&title_bg=%231f2229&icon=&icon_color=%23E7E7E7&title=Visits&edge_flat=true" alt="Visits">
+            <img class="visitor-badge-img" src="https://visitor-badge.laobi.icu/badge?page_id=hyaroz-product-list&left_text=TOTAL%20VISITS&left_color=1f2229&right_color=e11d48" alt="Store Visits">
         </div>
 
     </div>
 
-    <!-- POWIĘKSZONE OKIENKO (MODAL) -->
     <div class="modal-overlay" id="customAlert">
         <div class="modal-box">
             <div id="modalBody"></div>
@@ -626,9 +616,11 @@
                 let dostepnoscClass = gra.available === "Yes" ? "status-in" : "status-out";
                 let dostepnoscTekst = gra.available === "Yes" ? "In Stock" : "Out of Stock";
                 let napisRequestedHtml = gra.requestedBy ? `<div class="card-requested">Requested by: <strong>${gra.requestedBy}</strong></div>` : "";
+                let wszystkieTagiJakoTekst = gra.tags ? gra.tags.join(',') : "";
 
                 const karta = document.createElement("div");
                 karta.className = "game-card";
+                karta.setAttribute("data-tags", wszystkieTagiJakoTekst); 
 
                 karta.innerHTML = `
                     <div class="card-image-wrapper">
