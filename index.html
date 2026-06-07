@@ -100,6 +100,25 @@
             transform: translateY(-2px);
         }
 
+        /* NOWOŚĆ: ULEPSZONY LICZNIK WIZYT POD PRZYCISKIEM */
+        .visits-counter {
+            margin-top: 20px; /* Odpycha licznik od czerwonego przycisku */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.8; /* Lekko przygaszony, żeby nie krzyczał na ekranie */
+            transition: opacity 0.2s ease;
+        }
+
+        .visits-counter:hover {
+            opacity: 1; /* Podświetla się, gdy najedziesz myszką */
+        }
+
+        .visits-counter img {
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Elegancki cień pod spodem */
+        }
+
         /* PASEK WYSZUKIWANIA */
         .search-toolbar {
             padding: 20px 0;
@@ -355,27 +374,6 @@
         }
 
         /* =========================================
-           STOPKA (LICZNIK WIZYT)
-           ========================================= */
-        .shop-footer {
-            margin-top: 80px;
-            padding-top: 30px;
-            border-top: 1px solid #1f2229;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .visitor-badge-img {
-            /* Powiększenie i dodanie krągłości, żeby wyglądał jak część interfejsu */
-            transform: scale(1.3);
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        /* =========================================
            POWIĘKSZONE OKIENKO (MODAL NA ŚRODKU)
            ========================================= */
         .modal-overlay {
@@ -520,6 +518,10 @@
             <a href="https://discord.com/channels/1507375933819060404/1507375934733549695/1507426745752621198" class="hero-ticket-btn" target="_blank">
                 🛒 Open a Ticket to Buy
             </a>
+            
+            <div class="visits-counter">
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=hyaroz-product-list&left_text=Visits&left_color=1f2229&right_color=e11d48" alt="Visits">
+            </div>
         </div>
 
         <div class="search-toolbar">
@@ -544,10 +546,6 @@
         <div class="games-grid" id="kontenerGier"></div>
 
         <div class="pagination-container" id="kontenerPaginacji"></div>
-
-        <div class="shop-footer">
-            <img class="visitor-badge-img" src="https://visitor-badge.laobi.icu/badge?page_id=hyaroz-product-list&left_text=TOTAL%20VISITS&left_color=1f2229&right_color=e11d48" alt="Store Visits">
-        </div>
 
     </div>
 
