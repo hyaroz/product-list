@@ -90,7 +90,7 @@ const bazaGier = [
         tags: [],
         soldCount: 1,
         available: "Yes",
-        image: "https://sm.ign.com/ign_ap/cover/s/slay-the-s/slay-the-spire-2_a9xk.jpg",
+        image: "https://images.g2a.com/323x433/1x1x1/slay-the-spire-2-p10000510470/68691954e7d849989d561796",
         description: "The iconic roguelike deckbuilder returns. Craft a unique deck, encounter bizarre creatures, and discover relics of immense power in Slay the Spire 2!",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     },
