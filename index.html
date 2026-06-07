@@ -6,443 +6,322 @@
     <title>Hyaro's Sh0p - Product List</title>
     
     <style>
-        /* Tło - ciemny, zgaszony szaro-zielonkawy odcień */
-        body {
-            background-color: #1a1c20;
-            background-image: linear-gradient(135deg, #1a1c20 0%, #25282e 100%);
-            color: #fcf1f3; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* CSS RESET & PODSTAWY */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 40px;
+            padding: 0;
+        }
+
+        body {
+            background-color: #090a0c; 
+            color: #e2e8f0; 
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            padding-bottom: 60px;
         }
 
-        /* Główny kontener strony */
-        .page-container {
+        /* GŁÓWNY KONTENER */
+        .page-wrapper {
             width: 100%;
             max-width: 1200px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAGŁÓWEK (HERO) */
+        .hero-section {
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        /* Wyśrodkowany nagłówek panelu */
-        .header {
-            display: flex;
-            flex-direction: column; 
-            align-items: center;    
-            text-align: center;     
-            gap: 20px;
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            border-bottom: 1px solid #1f2229;
             margin-bottom: 40px;
-            padding: 40px;
-            background-color: rgba(25, 27, 33, 0.7);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 40px rgba(184, 75, 94, 0.1);
-            border: 1px solid rgba(224, 163, 178, 0.15); 
-            max-width: 800px;
-            width: 100%;
         }
 
-        /* Ikona serwera */
-        .server-icon {
-            width: 120px; 
-            height: 120px;
-            border-radius: 25px;
+        .hero-icon {
+            width: 80px; 
+            height: 80px;
+            border-radius: 50%; 
             object-fit: cover;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.6);
-            border: 2px solid #b84b5e; 
+            border: 2px solid #2d333b; 
+            margin-bottom: 20px;
         }
 
-        .header-text {
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-        }
-
-        /* Nazwa sklepu */
-        h1 {
-            background: linear-gradient(to right, #f2cdd6, #c2465c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 42px;
-            margin: 0 0 12px 0;
-            text-shadow: 0 4px 10px rgba(194, 70, 92, 0.3);
-            font-weight: 800;
-        }
-
-        /* Profesjonalna odznaka w nagłówku */
-        .product-badge {
-            display: inline-block;
-            font-size: 13px;
+        .hero-badge {
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #f2cdd6;
-            background: rgba(184, 75, 94, 0.2);
-            padding: 6px 16px;
-            border-radius: 50px;
-            border: 1px solid rgba(184, 75, 94, 0.4);
+            letter-spacing: 1.5px;
+            color: #f43f5e;
             font-weight: 700;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(184, 75, 94, 0.1);
+            margin-bottom: 12px;
         }
 
-        /* Opis sklepu */
-        .shop-description {
-            font-size: 15px;
-            color: #a3a7ae;
-            margin: 0;
-            line-height: 1.5;
-            max-width: 550px;
+        .hero-title {
+            color: #ffffff;
+            font-size: 46px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
         }
 
-        /* Sekcja Akcji Ticketu */
-        .ticket-action {
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255,255,255,0.05); 
-            width: 100%;
-        }
-
-        .ticket-action p {
-            color: #d1d1d1;
+        .hero-desc {
             font-size: 16px;
-            margin-bottom: 15px;
-            margin-top: 0;
+            color: #94a3b8;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 30px;
         }
 
-        /* Przycisk tworzenia ticketa */
-        .ticket-btn {
-            display: inline-block;
-            background: linear-gradient(to right, #c2465c, #b84b5e);
+        .hero-ticket-btn {
+            background-color: #e11d48;
             color: white;
             text-decoration: none; 
-            padding: 12px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(184, 75, 94, 0.4);
+            padding: 12px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .ticket-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(184, 75, 94, 0.6);
+        .hero-ticket-btn:hover {
+            background-color: #be123c;
+            transform: translateY(-2px);
         }
 
-        /* Kontener na wyszukiwarkę i sekcję filtrowania */
-        .search-filter-section {
-            width: 100%;
-            max-width: 800px;
+        /* PASEK WYSZUKIWANIA */
+        .search-toolbar {
+            padding: 20px 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #1f2229;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 50px;
-        }
-
-        /* Wyszukiwarka */
-        #wyszukiwarka {
             width: 100%;
-            max-width: 600px;
-            padding: 18px 25px;
-            font-size: 18px;
-            border: 2px solid rgba(255,255,255,0.05);
-            border-radius: 50px;
-            background-color: #202329;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 14px 20px;
+            font-size: 15px;
+            border: 1px solid #2d333b;
+            border-radius: 8px;
+            background-color: #121418;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             outline: none;
-            transition: all 0.3s ease;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.6), 0 5px 15px rgba(0,0,0,0.3);
-            text-align: center; 
+            transition: border-color 0.2s ease;
+            text-align: center;
         }
 
-        #wyszukiwarka:focus {
-            border-color: #b84b5e;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.6), 0 0 15px rgba(184, 75, 94, 0.4);
+        .search-input:focus {
+            border-color: #e11d48;
         }
 
-        /* Kontener na przyciski tagów w wyszukiwarce */
-        .tags-container {
+        .tags-wrapper {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            margin-bottom: 10px;
         }
 
-        /* Wygląd domyślny pojedynczego przycisku tagu */
-        .tag-btn {
-            font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
-            background-color: #202329;
-            color: #a3a7ae;
-            border: 2px solid rgba(255,255,255,0.05);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tag-btn:hover {
-            color: white;
-            border-color: rgba(255, 255, 255, 0.3);
-            background-color: #252930;
-        }
-
-        /* --- KOLORY DLA KLIKNIĘTYCH PRZYCISKÓW FILTRÓW (ACTIVE) --- */
-        .tag-btn.btn-all.active {
-            background-color: #202329;
-            color: white;
-            border-color: #b84b5e; 
-            box-shadow: 0 0 12px rgba(184, 75, 94, 0.3);
-        }
-
-        .tag-btn.btn-popular.active {
-            background-color: #202329;
-            color: #ffffff; 
-            border-color: #FFD700; 
-            box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
-        }
-
-        .tag-btn.btn-requested.active {
-            background-color: #202329; 
-            color: #ffffff; 
-            border-color: #12a690; 
-            box-shadow: 0 0 12px rgba(18, 166, 144, 0.3);
-        }
-
-        .tag-btn.btn-denuvo.active {
-            background-color: #202329; 
-            color: #ffffff; 
-            border-color: #3b82f6; 
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
-        }
-
-        .tag-btn.btn-dlc.active {
-            background-color: #202329; 
-            color: #ffffff; 
-            border-color: #22c55e; 
-            box-shadow: 0 0 12px rgba(34, 197, 94, 0.3);
-        }
-
-        .tag-btn.btn-special.active {
-            background-color: #202329; 
-            color: #ffffff; 
-            border-color: #0ea5e9; 
-            box-shadow: 0 0 12px rgba(14, 165, 233, 0.3);
-        }
-
-        /* Dynamiczny licznik gier */
-        .game-counter {
-            font-size: 14px;
-            color: #71757d;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        /* Siatka gier */
-        .lista-gier {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            width: 100%;
-            padding: 20px;
-            margin-bottom: 60px;
-            align-items: stretch;
-        }
-
-        /* Karta gry */
-        .gra {
-            background: linear-gradient(145deg, #2a2c33, #1e2025);
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.03);
-            position: relative; 
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%; 
-            box-sizing: border-box;
-        }
-
-        .gra:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            border-color: rgba(184, 75, 94, 0.5);
-        }
-
-        /* --- NOWOŚĆ: INTELIGENTNY POJEMNIK NA WIELE PLAKIETEK --- */
-        .badges-container {
-            position: absolute;
-            top: 30px;
-            left: 30px;
-            right: 30px; /* Zabezpiecza przed wychodzeniem tagów poza okładkę z prawej strony */
-            display: flex;
-            flex-wrap: wrap; /* Pozwala tagom układać się w kilku rzędach, gdy jest ich dużo */
-            gap: 6px; /* Odstępy pomiędzy tagami */
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        /* Plakietki wewnątrz nowego pojemnika na karcie gry */
-        .card-badge {
-            font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
-            padding: 4px 10px; /* Pomniejszony margines, żeby wiele tagów łatwo się mieściło */
+        .filter-btn {
+            font-family: inherit;
+            background-color: transparent;
+            color: #94a3b8;
+            border: 1px solid #2d333b;
+            padding: 8px 16px;
             border-radius: 6px;
-            font-size: 10px; /* Pomniejszona czcionka z 11px na 10px */
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background-color: #202329; 
-            color: #ffffff; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-        }
-
-        .badge-popular { border: 2px solid #FFD700; }
-        .badge-requested { border: 2px solid #12a690; }
-        .badge-denuvo { border: 2px solid #3b82f6; }
-        .badge-dlc { border: 2px solid #22c55e; }
-        .badge-special { border: 2px solid #0ea5e9; }
-
-        /* GÓRNA CZĘŚĆ KARTY */
-        .gra-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        /* Obrazek wewnątrz karty gry */
-        .gra img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
-            transition: transform 0.4s ease;
-            background-color: #1e2025; 
-        }
-
-        .gra:hover img {
-            transform: scale(1.05);
-        }
-
-        .gra-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex-grow: 1;
-            width: 100%;
-        }
-
-        /* Tytuł gry */
-        .gra h3 {
-            margin: 0 0 5px 0;
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-            line-height: 1.3;
-        }
-
-        /* Napis kto poprosił o grę */
-        .requested-by-text {
             font-size: 13px;
-            color: #a3a7ae;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-        
-        .requested-by-text strong {
-            color: #f2cdd6; 
-            font-style: normal;
-        }
-
-        /* Licznik zakupów na karcie gry */
-        .sold-counter {
-            font-size: 13px;
-            color: #e0a3b2;
-            margin-bottom: 15px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-        }
-
-        /* DOLNA CZĘŚĆ KARTY (Cena i Status) */
-        .card-footer-bottom {
-            margin-top: auto; 
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 15px; 
-        }
-
-        /* Cena gier */
-        .price-btn {
-            margin: 0;
-            display: inline-block;
-            padding: 8px 20px;
-            background: linear-gradient(145deg, #b84b5e, #8c3243);
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 18px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(184, 75, 94, 0.4);
-            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-            border: none;
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
-        .price-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(145deg, #cc546a, #9c3a4d);
-            box-shadow: 0 6px 14px rgba(184, 75, 94, 0.6);
+        .filter-btn:hover {
+            color: #f8fafc;
+            background-color: #1f2229;
         }
 
-        /* Pojemnik na kropkę i tekst dostępności */
-        .stock-container {
+        /* Aktywne filtry */
+        .filter-btn.active {
+            background-color: #e11d48;
+            color: white;
+            border-color: #e11d48;
+        }
+        .filter-btn.btn-popular.active { background-color: #2d333b; color: #eab308; border-color: #eab308; }
+        .filter-btn.btn-requested.active { background-color: #2d333b; color: #14b8a6; border-color: #14b8a6; }
+        .filter-btn.btn-denuvo.active { background-color: #2d333b; color: #3b82f6; border-color: #3b82f6; }
+        .filter-btn.btn-dlc.active { background-color: #2d333b; color: #22c55e; border-color: #22c55e; }
+        .filter-btn.btn-special.active { background-color: #2d333b; color: #0ea5e9; border-color: #0ea5e9; }
+
+        .counter-text {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        /* SIATKA GIER */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            width: 100%;
+        }
+
+        .game-card {
+            background-color: #121418;
+            border-radius: 12px;
+            border: 1px solid #22262e;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            overflow: hidden; 
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            border-color: #3e4552;
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            background-color: #1a1d24;
+        }
+
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badges {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            display: flex;
+            flex-wrap: wrap;
             gap: 6px;
-            margin-top: 12px;
-            font-size: 12px;
-            color: #a3a7ae;
-            font-weight: 600;
+            z-index: 2;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            background-color: rgba(9, 10, 12, 0.9);
+            backdrop-filter: blur(4px);
         }
 
-        .static-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
+        .badge-popular { border: 1px solid #eab308; color: #eab308; }
+        .badge-requested { border: 1px solid #14b8a6; color: #14b8a6; }
+        .badge-denuvo { border: 1px solid #3b82f6; color: #3b82f6; }
+        .badge-dlc { border: 1px solid #22c55e; color: #22c55e; }
+        .badge-special { border: 1px solid #0ea5e9; color: #0ea5e9; }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; 
         }
 
-        .dot-green { background-color: #43b581; }
-        .dot-red { background-color: #f04747; }
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
 
-        /* OKIENKO INFORMACYJNE (Modal popup) */
+        .card-requested {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        
+        .card-requested strong {
+            color: #cbd5e1;
+        }
+
+        .card-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto; 
+            padding-bottom: 16px;
+        }
+
+        .stat-sold {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .stat-status {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-in { color: #10b981; }
+        .status-out { color: #ef4444; }
+
+        /* PRZYCISK ZAKUPU (ZABLOKOWANY NA DOLE KARTY) */
+        .card-buy-btn {
+            width: 100%;
+            background-color: transparent;
+            color: #f8fafc;
+            border: top;
+            border-width: 1px 0 0 0;
+            border-style: solid;
+            border-color: #22262e;
+            padding: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-buy-btn:hover {
+            background-color: #1f2229;
+            color: #f43f5e;
+        }
+
+        .btn-price {
+            font-weight: 800;
+        }
+
+        /* =========================================
+           POWIĘKSZONE OKIENKO (MODAL NA ŚRODKU)
+           ========================================= */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(5px);
+            background-color: rgba(0, 0, 0, 0.75);
             display: none;
             justify-content: center;
             align-items: center;
@@ -450,19 +329,20 @@
         }
 
         .modal-box {
-            background-color: #202329;
+            background-color: #0d0f12;
             padding: 30px; 
-            border-radius: 20px;
-            max-width: 600px; 
+            border-radius: 12px;
+            /* POWIĘKSZONA SZEROKOŚĆ OKIENKA z 600px na 750px! */
+            max-width: 750px; 
             width: 90%;
             text-align: left; 
+            border: 1px solid #1f2229; 
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-            animation: modalFadeIn 0.3s ease;
-            border: 2px solid #b84b5e; 
+            animation: modalFadeIn 0.2s ease;
         }
 
         @keyframes modalFadeIn {
-            from { transform: scale(0.9); opacity: 0; }
+            from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
 
@@ -472,14 +352,14 @@
             align-items: flex-start; 
         }
 
+        /* POWIĘKSZONY I ZABEZPIECZONY OBRAZEK */
         .modal-image {
-            width: 140px; 
-            height: 190px; 
+            width: 160px; /* Zwiększone ze 140px */
+            height: 220px; /* Zwiększone z 190px */
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-            flex-shrink: 0; 
+            border-radius: 8px;
+            border: 1px solid #1f2229;
+            flex-shrink: 0; /* Zabezpieczenie przed gnieceniem */
         }
 
         .modal-details {
@@ -489,45 +369,45 @@
         .modal-details h4 {
             margin: 0 0 10px 0;
             font-size: 26px;
-            color: #ffffff;
+            color: #f8fafc;
             line-height: 1.2;
         }
 
         .modal-details-desc {
-            color: #d1d1d1;
+            color: #94a3b8;
             font-size: 15px;
             line-height: 1.6;
             margin-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid #1f2229;
             padding-top: 15px;
         }
         
         .modal-details-desc strong {
-            color: #e0a3b2;
+            color: #cbd5e1;
         }
 
         .modal-features {
             list-style: none;
             padding: 0;
             margin: 15px 0 0 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid #1f2229;
             padding-top: 15px;
         }
 
         .modal-features li {
-            color: #43b581; 
+            color: #10b981; 
             margin-bottom: 8px;
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .modal-instructions {
-            color: #a3a7ae;
-            font-size: 15px;
+            color: #64748b;
+            font-size: 14px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid #1f2229;
             padding-top: 20px;
-            margin: 25px 0 25px 0;
+            margin: 25px 0;
             line-height: 1.5;
         }
 
@@ -536,63 +416,53 @@
         }
 
         .modal-close-btn {
-            background: linear-gradient(to right, #c2465c, #b84b5e);
-            color: white;
-            border: none;
+            background-color: #1f2229;
+            color: #f8fafc;
+            border: 1px solid #2d333b;
             padding: 10px 40px;
-            font-weight: bold;
-            border-radius: 50px;
+            font-weight: 600;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 15px;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 10px rgba(184, 75, 94, 0.4);
+            font-size: 14px;
+            transition: all 0.2s ease;
         }
 
         .modal-close-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 14px rgba(184, 75, 94, 0.6);
+            background-color: #e11d48;
+            border-color: #e11d48;
         }
     </style>
 </head>
 <body>
 
-    <div class="page-container">
+    <div class="page-wrapper">
         
-        <div class="header">
-            <img src="https://i.pinimg.com/474x/a1/8d/23/a18d2348541eeb8ba8b75e7c4565928f.jpg" alt="Server Logo" class="server-icon">
-            <div class="header-text">
-                <h1>Hyaro's Sh0p</h1>
-                <div class="product-badge">🛒 Official Product List & Pricing</div>
-                <p class="shop-description">Explore our premium collection of games. Safe, instant activation, and 24/7 support via Discord tickets.</p>
-                
-                <div class="ticket-action">
-                    <p>Ready to purchase? Open a ticket on our server!</p>
-                    <a href="https://discord.com/channels/1507375933819060404/1507375934733549695/1507426745752621198" class="ticket-btn" target="_blank">Create Ticket</a>
-                </div>
-            </div>
+        <div class="hero-section">
+            <img src="https://i.pinimg.com/474x/a1/8d/23/a18d2348541eeb8ba8b75e7c4565928f.jpg" alt="Logo" class="hero-icon">
+            <div class="hero-badge">Official Product List</div>
+            <h1 class="hero-title">Hyaro's Sh0p</h1>
+            <p class="hero-desc">Explore our premium collection of games. Safe, instant activation, and 24/7 support via Discord tickets.</p>
+            <a href="https://discord.com/channels/1507375933819060404/1507375934733549695/1507426745752621198" class="hero-ticket-btn" target="_blank">
+                🛒 Open a Ticket to Buy
+            </a>
         </div>
 
-        <div class="search-filter-section">
-            
-            <input type="text" id="wyszukiwarka" placeholder="🔍 Search for a game..." 
-                   onfocus="this.value=''; this.placeholder=''; filtrujGry();" 
-                   onblur="this.placeholder='🔍 Search for a game...'" 
-                   onkeyup="filtrujGry()">
+        <div class="search-toolbar">
+            <input type="text" id="wyszukiwarka" class="search-input" placeholder="Search for a game..." onkeyup="filtrujGry()">
 
-            <div class="tags-container">
-                <button class="tag-btn btn-all active" onclick="ustawTag('all', this)">All</button>
-                <button class="tag-btn btn-popular" onclick="ustawTag('popular', this)">⭐ Popular</button>
-                <button class="tag-btn btn-requested" onclick="ustawTag('requested', this)">❤️ Requested</button>
-                <button class="tag-btn btn-denuvo" onclick="ustawTag('denuvo', this)">🛡️ Denuvo</button>
-                <button class="tag-btn btn-dlc" onclick="ustawTag('dlc', this)">🧩 DLC Activation</button>
-                <button class="tag-btn btn-special" onclick="ustawTag('special', this)">💎 Special</button>
+            <div class="tags-wrapper">
+                <button class="filter-btn btn-all active" onclick="ustawTag('all', this)">All</button>
+                <button class="filter-btn btn-popular" onclick="ustawTag('popular', this)">⭐ Popular</button>
+                <button class="filter-btn btn-requested" onclick="ustawTag('requested', this)">❤️ Requested</button>
+                <button class="filter-btn btn-denuvo" onclick="ustawTag('denuvo', this)">🛡️ Denuvo</button>
+                <button class="filter-btn btn-dlc" onclick="ustawTag('dlc', this)">🧩 DLC Activation</button>
+                <button class="filter-btn btn-special" onclick="ustawTag('special', this)">💎 Special</button>
             </div>
             
-            <span class="game-counter" id="licznikGier">Showing 0 games</span>
-
+            <span class="counter-text" id="licznikGier">Showing 0 games</span>
         </div>
 
-        <div class="lista-gier" id="kontenerGier"></div>
+        <div class="games-grid" id="kontenerGier"></div>
 
     </div>
 
@@ -602,167 +472,9 @@
         </div>
     </div>
 
+    <script src="lista-gier.js"></script>
+
     <script>
-        /* =======================================================================
-          WIKI: JAK EDYTOWAĆ I DODAWAC NOWE GRY DO SKLEPU?
-          =======================================================================
-          W sekcji "bazaGier" dopisz nowy blok gry:
-          
-          NOWOŚĆ: "tags" działa teraz jako lista w nawiasach kwadratowych [ ].
-          Możesz podać kilka tagów po przecinku w cudzysłowach, np. ["denuvo", "popular"].
-          Jeśli nie chcesz żadnego tagu, po prostu zostaw puste nawiasy: tags: []
-          =======================================================================
-        */
-
-        const bazaGier = [
-            {
-                id: 1, 
-                title: "Forza Horizon 6", 
-                price: "€5.00",
-                tags: ["popular"], // <-- TUTAJ: Nawiasy kwadratowe pozwalają na listę tagów!
-                soldCount: 6,
-                available: "Yes",
-                image: "https://store-images.s-microsoft.com/image/apps.60342.13547047233571036.013c5ec3-a5d7-4e8a-83e7-470299116376.2346f664-c01a-4b06-a92c-4819a43e8f75", 
-                description: "Includes a 1-click easy installer. Jump straight into the action and play online with your friends in minutes!",
-                features: ["Safe & Instant Delivery", "1-Click Easy Installer", "Online Multiplayer Enabled", "24/7 Discord Support"]
-            },
-            {
-                id: 2,
-                title: "Elden Ring", 
-                price: "€7.50",
-                tags: ["requested"],
-                soldCount: 1,
-                available: "Yes",
-                requestedBy: "Skectta",
-                image: "https://assets.xboxservices.com/assets/7b/54/7b54f5e4-0857-4ce3-8a18-2b8c431e8a9e.jpg?n=Elden-Ring_GLP-Page-Hero-0_1083x1222_01.jpg",
-                description: "An epic action RPG adventure requested by our community. Rise, Tarnished, and be guided by grace.",
-                features: ["Safe & Instant Delivery", "Game of The Year Edition", "24/7 Discord Support"]
-            },
-            {
-                id: 3,
-                title: "Hollow Knight",
-                price: "€2.50",
-                tags: ["requested"],
-                soldCount: 1,
-                available: "Yes",
-                requestedBy: "Aappanada",
-                image: "https://assetsio.gnwcdn.com/cobfzp.jpg?width=380&quality=85&format=jpg&auto=webp",
-                description: "Forge your own path in Hollow Knight! An epic action adventure through a vast ruined kingdom of insects and heroes.",
-                features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-            },
-            {
-                id: 4,
-                title: "LEGO® Batman™: LOTDK",
-                price: "€10.00",
-                tags: ["popular", "denuvo"], // <-- ZOBACZ: Gra ma na raz plakietkę Denuvo i Popular!
-                soldCount: 3,
-                available: "Yes",
-                image: "https://image.api.playstation.com/vulcan/ap/rnd/202508/1316/3302f35b66691aa405aee31624c0c95fe73081be8e0c75bb.png",
-                description: "Game + Bypass included. Requires a short conversation with the seller to activate properly without hypervisor.",
-                features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "24/7 Discord Support"]
-            },
-            {
-                id: 5,
-                title: "Euro Truck Simulator 2",
-                price: "€10.00",
-                tags: ["dlc"],
-                soldCount: 0,
-                available: "Yes",
-                image: "https://image.api.playstation.com/vulcan/ap/rnd/202507/3015/979c621ba246797ecb02ac1143b290d080c5ae9b57d9b3b3.jpg",
-                description: "Instantly unlocks all extra DLC content and map expansions for your base game.",
-                features: ["Instant DLC Unlock", "Works with latest patches", "24/7 Discord Support"]
-            },
-            {
-                id: 6,
-                title: "VIP Lifetime Access",
-                price: "€20.00",
-                tags: ["special"],
-                soldCount: 1,
-                available: "Yes",
-                image: "https://placehold.co/300x400/2a2c33/e0a3b2?text=VIP+Lifetime",
-                description: "Grants permanent access to every game added to our shop's library. <strong>Note:</strong> Games with Denuvo protection are not included in this package.",
-                features: ["Instant Library Access", "Free Future Updates", "Priority VIP Support Role"]
-            },
-            {
-                id: 7,
-                title: "Subnautica 2",
-                price: "€3.50",
-                tags: [], // <-- PUSTE NAWIASY = brak jakichkolwiek plakietek
-                soldCount: 2,
-                available: "Yes",
-                image: "https://static0.xdaimages.com/wordpress/wp-content/uploads/2025/04/subnautica-2-06-1.png",
-                description: "Subnautica 2 is an underwater survival adventure game set on an all-new alien world. It is the next chapter in the Subnautica universe, developed by Unknown Worlds.",
-                features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-            },
-			{
-                id: 8,
-                title: "Slay the Spire 2",
-                price: "€3.00",
-                tags: [], // <-- PUSTE NAWIASY = brak jakichkolwiek plakietek
-                soldCount: 1,
-                available: "Yes",
-                image: "https://images.g2a.com/323x433/1x1x1/slay-the-spire-2-p10000510470/68691954e7d849989d561796",
-                description: "The iconic roguelike deckbuilder returns. Craft a unique deck, encounter bizarre creatures, and discover relics of immense power in Slay the Spire 2!",
-                features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-            },
-			{
-                id: 9,
-                title: "Raft",
-                price: "€3.00",
-                tags: ["requested"],
-                soldCount: 1,
-                available: "Yes",
-                requestedBy: "Vaelicide",
-                image: "https://store-images.s-microsoft.com/image/apps.32463.14102062639781722.573266e7-686b-44fb-9e48-a2585bc2170f.5424f649-5154-402f-88e5-905dae685f22",
-                description: "Raft™ throws you and your friends into an epic oceanic adventure! Alone or together, players battle to survive a perilous voyage across a vast sea!",
-                features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-            },
-			{
-                id: 10,
-                title: "Teardown",
-                price: "€3.50",
-                tags: ["requested"],
-                soldCount: 2,
-                available: "Yes",
-                requestedBy: "Aappanada",
-                image: "https://image.api.playstation.com/vulcan/ap/rnd/202308/1509/f36a5012241a1abe419a16de0470a566ebe20ff6ac124704.png",
-                description: "Prepare the perfect heist in a fully destructible, simulated voxel world. Tear down walls with vehicles or use explosives to create your own shortcuts.",
-                features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-            },
-		    {
-                id: 11,
-                title: "Car Dealer Simulator",
-                price: "€2.00",
-                tags: ["requested"],
-                soldCount: 0,
-                available: "Yes",
-                requestedBy: "Aappanada",
-                image: "https://store-images.s-microsoft.com/image/apps.9832.13800000154456066.ce46f5af-b560-4bfb-bb18-f2baa791e9b2.a413078f-ec55-483f-b57c-130a395597f5",
-                description: "Turn your dreams of selling used cars into reality! In Car Dealer Simulator, you'll learn how to run a business from its owner, Little Sam. He's a strange guy who doesn't keep track of his business.",
-                features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-            },
-			{
-                id: 12,
-                title: "Popular Games Pack",
-                price: "€7.50",
-                tags: ["special"],
-                soldCount: 0,
-                available: "Yes",
-                image: "https://placehold.co/300x400/2a2c33/e0a3b2?text=Popular+Games+Pack",
-                description: "Grants access to Forza Horizon 6, Subnautica 2 and Slay The Spire 2.",
-                features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-            }
-        ];
-
-        /* Słownik tagów */
-        const konfiguracjaTagow = {
-            "popular": { klasa: "badge-popular", tekst: "⭐ Popular" },
-            "requested": { klasa: "badge-requested", tekst: "❤️ Requested" },
-            "denuvo": { klasa: "badge-denuvo", tekst: "🛡️ Denuvo" },
-            "dlc": { klasa: "badge-dlc", tekst: "🧩 DLC's" },
-            "special": { klasa: "badge-special", tekst: "💎 Special" }
-        };
-
         let aktywnyTag = "all";
 
         function generujSklep() {
@@ -772,52 +484,50 @@
             bazaGier.sort((a, b) => b.soldCount - a.soldCount);
 
             bazaGier.forEach(gra => {
-                
-                // Generujemy wszystkie potrzebne plakietki w pętli z nowej, elastycznej listy tags
                 let badgesWewnatrzHTML = "";
                 if (gra.tags && gra.tags.length > 0) {
                     gra.tags.forEach(pojedynczyTag => {
                         if (konfiguracjaTagow[pojedynczyTag]) {
                             let u = konfiguracjaTagow[pojedynczyTag];
-                            badgesWewnatrzHTML += `<div class="card-badge ${u.klasa}">${u.tekst}</div>`;
+                            badgesWewnatrzHTML += `<div class="badge ${u.klasa}">${u.tekst}</div>`;
                         }
                     });
                 }
 
-                // Zawijamy je w nowe, inteligentne pudełko, które je ładnie ułoży i zawinie w dół w razie braku miejsca
                 let pelnyBadgeContainer = "";
                 if (badgesWewnatrzHTML !== "") {
-                    pelnyBadgeContainer = `<div class="badges-container">${badgesWewnatrzHTML}</div>`;
+                    pelnyBadgeContainer = `<div class="card-badges">${badgesWewnatrzHTML}</div>`;
                 }
 
-                let dostepnoscKropka = gra.available === "Yes" ? "dot-green" : "dot-red";
-                let dostepnoscTekst = gra.available === "Yes" ? "Available" : "Not Available";
-
-                let napisRequestedHtml = gra.requestedBy ? `<div class="requested-by-text">Requested by: <strong>${gra.requestedBy}</strong></div>` : "";
-
-                // Konwersja tagów gry z listy [ ] na jeden tekst (np. "denuvo,popular"), po to żebyśmy mogli później łatwo po nich szukać i filtrować
+                let dostepnoscClass = gra.available === "Yes" ? "status-in" : "status-out";
+                let dostepnoscTekst = gra.available === "Yes" ? "In Stock" : "Out of Stock";
+                let napisRequestedHtml = gra.requestedBy ? `<div class="card-requested">Requested by: <strong>${gra.requestedBy}</strong></div>` : "";
                 let wszystkieTagiJakoTekst = gra.tags ? gra.tags.join(',') : "";
 
                 const karta = document.createElement("div");
-                karta.className = "gra";
-                karta.setAttribute("data-tags", wszystkieTagiJakoTekst); // Przekazujemy tekst do HTML
+                karta.className = "game-card";
+                karta.setAttribute("data-tags", wszystkieTagiJakoTekst); 
 
                 karta.innerHTML = `
-                    <div class="gra-content">
+                    <div class="card-image-wrapper">
                         ${pelnyBadgeContainer} 
-                        <img src="${gra.image}" alt="${gra.title}">
+                        <img src="${gra.image}" loading="lazy" alt="${gra.title}">
+                    </div>
+                    
+                    <div class="card-body">
+                        <h3 class="card-title">${gra.title}</h3>
+                        ${napisRequestedHtml} 
                         
-                        <div class="gra-info">
-                            <h3>${gra.title}</h3>
-                            ${napisRequestedHtml} 
-                            <div class="sold-counter">📊 ${gra.soldCount} copies sold</div>
+                        <div class="card-stats">
+                            <span class="stat-sold">🛒 ${gra.soldCount} sold</span>
+                            <span class="stat-status ${dostepnoscClass}">• ${dostepnoscTekst}</span>
                         </div>
                     </div>
                     
-                    <div class="card-footer-bottom">
-                        <button class="price-btn" onclick="klikniecieCeny(${gra.id})">${gra.price}</button>
-                        <div class="stock-container"><div class="static-dot ${dostepnoscKropka}"></div> ${dostepnoscTekst}</div>
-                    </div>
+                    <button class="card-buy-btn" onclick="klikniecieCeny(${gra.id})">
+                        <span class="btn-price">${gra.price}</span>
+                        <span>— View Details</span>
+                    </button>
                 `;
 
                 kontener.appendChild(karta);
@@ -832,7 +542,7 @@
             const modal = document.getElementById("customAlert");
             const modalBody = document.getElementById("modalBody");
 
-            let statusColor = gra.available === "Yes" ? "#43b581" : "#f04747";
+            let statusColor = gra.available === "Yes" ? "#10b981" : "#ef4444";
             let statusText = gra.available === "Yes" ? "Available" : "Not Available";
 
             let listaZaletHTML = "";
@@ -851,8 +561,8 @@
                     <div class="modal-details">
                         <h4>${gra.title}</h4>
                         <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 5px;">
-                            <span style="font-size: 26px; font-weight: bold; color: #b84b5e;">${gra.price}</span>
-                            <span style="color: ${statusColor}; font-weight: 600; font-size: 15px;">(Status: ${statusText})</span>
+                            <span style="font-size: 26px; font-weight: 800; color: #e11d48;">${gra.price}</span>
+                            <span style="color: ${statusColor}; font-weight: 600; font-size: 14px; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px;">• ${statusText}</span>
                         </div>
                         
                         <p class="modal-details-desc">
@@ -873,16 +583,25 @@
             `;
             
             modal.style.display = "flex";
+            document.body.style.overflow = "hidden"; 
         }
 
         function closeModal() {
             document.getElementById("customAlert").style.display = "none";
+            document.body.style.overflow = "auto"; 
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("customAlert");
+            if (event.target == modal) {
+                closeModal();
+            }
         }
 
         function ustawTag(tag, kliknietyPrzycisk) {
             aktywnyTag = tag;
             
-            let przyciski = document.getElementsByClassName("tag-btn");
+            let przyciski = document.getElementsByClassName("filter-btn");
             for (let i = 0; i < przyciski.length; i++) {
                 przyciski[i].classList.remove("active");
             }
@@ -894,19 +613,16 @@
 
         function filtrujGry() {
             let wpisanyTekst = document.getElementById("wyszukiwarka").value.toLowerCase();
-            let gry = document.getElementsByClassName("gra");
+            let gry = document.getElementsByClassName("game-card");
             let licznikWidocznych = 0;
 
             for (let i = 0; i < gry.length; i++) {
                 let tytulGier = gry[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
                 
-                // Pobieramy naszą nową, ukrytą listę tagów i rozbijamy ją z powrotem na pojedyncze słowa
                 let tagiGryString = gry[i].getAttribute("data-tags");
                 let listaTagowTejGry = tagiGryString ? tagiGryString.split(',') : [];
 
                 let pasujeTekst = tytulGier.includes(wpisanyTekst);
-                
-                // Jeśli kliknęliśmy guzik "All" to pasuje z marszu. Jeśli nie, sprawdzamy czy kliknięty tag znajduje się w liście tagów tej konkretnej gry.
                 let pasujeTag = (aktywnyTag === "all" || listaTagowTejGry.includes(aktywnyTag));
 
                 if (pasujeTekst && pasujeTag) {
@@ -917,7 +633,6 @@
                 }
             }
 
-            // --- INTELIGENTNY LICZNIK ---
             let tekstLicznika = "";
             if (aktywnyTag === "all") {
                 tekstLicznika = "Showing " + licznikWidocznych + " product" + (licznikWidocznych !== 1 ? "s" : "");
@@ -929,8 +644,6 @@
 
             document.getElementById("licznikGier").innerText = tekstLicznika;
         }
-
-        window.onload = generujSklep;
     </script>
 
 </body>
