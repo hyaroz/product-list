@@ -98,7 +98,7 @@
             transform: translateY(-2px);
         }
 
-        /* PASEK WYSZUKIWANIA */
+        /* PASEK WYSZUKIWANIA (Odklejony od ekranu) */
         .search-toolbar {
             padding: 20px 0;
             margin-bottom: 40px;
@@ -220,6 +220,7 @@
         }
 
         .badge {
+            font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
             padding: 4px 8px;
             border-radius: 4px;
             font-size: 10px;
@@ -332,7 +333,6 @@
             background-color: #0d0f12;
             padding: 30px; 
             border-radius: 12px;
-            /* POWIĘKSZONA SZEROKOŚĆ OKIENKA z 600px na 750px! */
             max-width: 750px; 
             width: 90%;
             text-align: left; 
@@ -354,12 +354,12 @@
 
         /* POWIĘKSZONY I ZABEZPIECZONY OBRAZEK */
         .modal-image {
-            width: 160px; /* Zwiększone ze 140px */
-            height: 220px; /* Zwiększone z 190px */
+            width: 160px; 
+            height: 220px; 
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid #1f2229;
-            flex-shrink: 0; /* Zabezpieczenie przed gnieceniem */
+            flex-shrink: 0; 
         }
 
         .modal-details {
@@ -466,19 +466,22 @@
 
     </div>
 
+    <!-- POWIĘKSZONE OKIENKO (MODAL) NA ŚRODKU -->
     <div class="modal-overlay" id="customAlert">
         <div class="modal-box">
             <div id="modalBody"></div>
         </div>
     </div>
 
-    <script src="lista-gier.js"></script>
+    <!-- Bezpośrednie wczytanie pliku z tego samego folderu -->
+    <script src="./lista-gier.js"></script>
 
     <script>
         let aktywnyTag = "all";
 
         function generujSklep() {
             const kontener = document.getElementById("kontenerGier");
+            if (!kontener) return;
             kontener.innerHTML = ""; 
 
             bazaGier.sort((a, b) => b.soldCount - a.soldCount);
@@ -644,6 +647,8 @@
 
             document.getElementById("licznikGier").innerText = tekstLicznika;
         }
+
+        window.onload = generujSklep;
     </script>
 
 </body>
