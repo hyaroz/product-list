@@ -147,7 +147,7 @@ const bazaGier = [
         price: "€5.00",
         tags: ["dlc"],
         soldCount: 1,
-        available: "No",
+        available: "Yes",
         image: "https://m.media-amazon.com/images/M/MV5BOWY5M2EyYTgtZGE3MC00ZjgyLTk3NWEtMGRiNTAwYmRkMWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         description: "Instantly unlocks all extra DLC content for your base game.",
         features: ["Instant DLCs Unlock", "Works with latest patches", "24/7 Discord Support"]
