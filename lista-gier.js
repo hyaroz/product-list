@@ -175,6 +175,17 @@ const bazaGier = [
         features: ["Access to 100,000+ Games", "Direct Source Link", "All Genres & Platforms"]
     },
     {
+        id: 21,
+        title: "007 First Light",
+        price: "€10.00",
+        tags: ["new", "denuvo"],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://image.api.playstation.com/vulcan/ap/rnd/202507/0215/f98041a10ccc22d45fc2f6eded09eec50abd106d01547a5d.png",
+        description: "007 First Light is a thrilling espionage action-adventure game from IO Interactive. Follow James Bond as a young, resourceful and sometimes reckless recruit.",
+        features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "1-Click Easy Installer (Game + Bypass)", "24/7 Discord Support"]
+    },
+    {
         id: 16,
         title: "Gothic Remake",
         price: "€5.00",
@@ -197,7 +208,7 @@ const bazaGier = [
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     },
     {
-        id: 21,
+        id: 18,
         title: "Sons of The Forest",
         price: "€3.50",
         tags: [],
@@ -228,17 +239,6 @@ const bazaGier = [
         image: "https://image.api.playstation.com/cdn/EP0700/CUSA03365_00/OFMeAw2KhrdaEZAjW1f3tCIXbogkLpTC.png",
         description: "The fires are dying, and the world is crumbling. Venture into a land filled with gigantic enemies and locations. Players will be immersed in a world of epic atmosphere and darkness, thanks to faster gameplay and increased combat intensity. Both fans and newcomers will fully immerse themselves in this game, renowned for its replayability and stunning graphics. Only embers remain... Prepare for battle once more and welcome the darkness!",
         features: ["Safe & Instant Delivery", "DLCs included", "1-Click Easy Installer", "24/7 Discord Support"]
-    },
-    {
-        id: 18,
-        title: "007 First Light",
-        price: "€10.00",
-        tags: ["new", "denuvo"],
-        soldCount: 0,
-        available: "Yes",
-        image: "https://image.api.playstation.com/vulcan/ap/rnd/202507/0215/f98041a10ccc22d45fc2f6eded09eec50abd106d01547a5d.png",
-        description: "007 First Light is a thrilling espionage action-adventure game from IO Interactive. Follow James Bond as a young, resourceful and sometimes reckless recruit.",
-        features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "1-Click Easy Installer (Game + Bypass)", "24/7 Discord Support"]
     }
 ];
 
