@@ -244,7 +244,7 @@ const bazaGier = [
         id: 23,
         title: "Valheim",
         price: "€2.50",
-        tags: ["New", "Requested"],
+        tags: ["new", "requested"],
         soldCount: 1,
         available: "Yes",
         requestedBy: "Aappanada",
