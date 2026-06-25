@@ -239,6 +239,18 @@ const bazaGier = [
         image: "https://image.api.playstation.com/cdn/EP0700/CUSA03365_00/OFMeAw2KhrdaEZAjW1f3tCIXbogkLpTC.png",
         description: "The fires are dying, and the world is crumbling. Venture into a land filled with gigantic enemies and locations. Players will be immersed in a world of epic atmosphere and darkness, thanks to faster gameplay and increased combat intensity. Both fans and newcomers will fully immerse themselves in this game, renowned for its replayability and stunning graphics. Only embers remain... Prepare for battle once more and welcome the darkness!",
         features: ["Safe & Instant Delivery", "DLCs included", "1-Click Easy Installer", "24/7 Discord Support"]
+    },
+    {
+        id: 22,
+        title: "Valheim",
+        price: "€2.50",
+        tags: ["New", "Requested"],
+        soldCount: 1,
+        available: "Yes",
+        requestedBy: "Aappanada",
+        image: "https://gaming-cdn.com/images/products/20442/orig/valheim-playstation-5-playstation-store-cover.jpg?v=1758113654",
+        description: "A brutal exploration and survival game for 1-10 players, set in a procedurally-generated purgatory inspired by viking culture. Battle, build, and conquer your way to a saga worthy of Odin’s patronage!",
+        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
 
