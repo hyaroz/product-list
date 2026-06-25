@@ -241,7 +241,7 @@ const bazaGier = [
         features: ["Safe & Instant Delivery", "DLCs included", "1-Click Easy Installer", "24/7 Discord Support"]
     },
     {
-        id: 22,
+        id: 23,
         title: "Valheim",
         price: "€2.50",
         tags: ["New", "Requested"],
