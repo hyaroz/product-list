@@ -56,7 +56,7 @@ const bazaGier = [
         price: "€10.00",
         tags: ["dlc"],
         soldCount: 0,
-        available: "No",
+        available: "Yes",
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202507/3015/979c621ba246797ecb02ac1143b290d080c5ae9b57d9b3b3.jpg",
         description: "Instantly unlocks all extra DLC content and map expansions for your base game.",
         features: ["Instant DLC Unlock", "Works with latest patches", "24/7 Discord Support"]
@@ -147,7 +147,7 @@ const bazaGier = [
         price: "€5.00",
         tags: ["dlc"],
         soldCount: 1,
-        available: "No",
+        available: "Yes",
         image: "https://m.media-amazon.com/images/M/MV5BOWY5M2EyYTgtZGE3MC00ZjgyLTk3NWEtMGRiNTAwYmRkMWRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
         description: "Instantly unlocks all extra DLC content for your base game.",
         features: ["Instant DLCs Unlock", "Works with latest patches", "24/7 Discord Support"]
