@@ -244,12 +244,24 @@ const bazaGier = [
         id: 23,
         title: "Valheim",
         price: "€2.50",
-        tags: ["new", "requested"],
+        tags: ["requested"],
         soldCount: 1,
         available: "Yes",
         requestedBy: "Aappanada",
         image: "https://gaming-cdn.com/images/products/20442/orig/valheim-playstation-5-playstation-store-cover.jpg?v=1758113654",
         description: "A brutal exploration and survival game for 1-10 players, set in a procedurally-generated purgatory inspired by viking culture. Battle, build, and conquer your way to a saga worthy of Odin’s patronage!",
+        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+    },
+    {
+        id: 24,
+        title: "Road 96",
+        price: "€2.50",
+        tags: ["new", "requested"],
+        soldCount: 1,
+        available: "Yes",
+        requestedBy: "Aappanada",
+        image: "https://image.api.playstation.com/vulcan/ap/rnd/202202/2312/qMFgvU90doAOUzwhbDa6Wr8Y.png",
+        description: "a narrative-driven adventure game where players control runaway teenagers trying to escape a fictional, authoritarian country named Petria in the summer of 1996.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
