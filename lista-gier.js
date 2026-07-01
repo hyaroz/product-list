@@ -263,6 +263,18 @@ const bazaGier = [
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202202/2312/qMFgvU90doAOUzwhbDa6Wr8Y.png",
         description: "a narrative-driven adventure game where players control runaway teenagers trying to escape a fictional, authoritarian country named Petria in the summer of 1996.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
+    },
+    {
+        id: 25,
+        title: "Shapez 2",
+        price: "€2.50",
+        tags: ["new", "requested"],
+        soldCount: 1,
+        available: "Yes",
+        requestedBy: "Aappanada",
+        image: "https://i.gadgets360cdn.com/products/large/shapez2-1687879839530-1000x1000-1726040179.jpg",
+        description: "Shapez 2 is a 3D factory-building game where you automate the mining, production, and delivery of geometric shapes. Each shape is a set of blocks that factories can arrange, disassemble, paint, and assemble in a nearly infinite number of ways.",
+        features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
 ];
 
