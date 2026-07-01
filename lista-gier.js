@@ -272,7 +272,7 @@ const bazaGier = [
         soldCount: 1,
         available: "Yes",
         requestedBy: "Aappanada",
-        image: "https://i.gadgets360cdn.com/products/large/shapez2-1687879839530-1000x1000-1726040179.jpg",
+        image: "https://img.gg.deals/6c/37/2700485609f6ded3e894780d81bc184c0577_1920xt1080_Q100.jpg",
         description: "Shapez 2 is a 3D factory-building game where you automate the mining, production, and delivery of geometric shapes. Each shape is a set of blocks that factories can arrange, disassemble, paint, and assemble in a nearly infinite number of ways.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
     }
