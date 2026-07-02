@@ -280,7 +280,7 @@ const bazaGier = [
         id: 26,
         title: "Resident Evil Requiem",
         price: "€10.00",
-        tags: ["New", "denuvo"],
+        tags: ["new", "denuvo"],
         soldCount: 0,
         available: "Yes",
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202512/1205/79661d7a2bdb9784749b4e57e1456ca89f7ac7bed8615aee.png",
