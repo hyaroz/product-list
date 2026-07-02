@@ -286,6 +286,7 @@ const bazaGier = [
         image: "https://image.api.playstation.com/vulcan/ap/rnd/202512/1205/79661d7a2bdb9784749b4e57e1456ca89f7ac7bed8615aee.png",
         description: "A new era of survival horror arrives with Resident Evil Requiem, the latest and most immersive installment in the iconic Resident Evil series. Experience terrifying survival horror with FBI analyst Grace Ashcroft and plunge into gripping, adrenaline-pumping action with legendary agent Leon S. Kennedy. Their intertwined fates and unique playstyles create a harrowing, emotional experience that will chill you to the core.",
         features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "1-Click Easy Installer (Game + Bypass)", "24/7 Discord Support"]
+     }     
 ];
 
 const konfiguracjaTagow = {
