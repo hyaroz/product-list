@@ -275,7 +275,17 @@ const bazaGier = [
         image: "https://img.gg.deals/6c/37/2700485609f6ded3e894780d81bc184c0577_1920xt1080_Q100.jpg",
         description: "Shapez 2 is a 3D factory-building game where you automate the mining, production, and delivery of geometric shapes. Each shape is a set of blocks that factories can arrange, disassemble, paint, and assemble in a nearly infinite number of ways.",
         features: ["Safe & Instant Delivery", "1-Click Easy Installer", "24/7 Discord Support"]
-    }
+    },
+    {
+        id: 26,
+        title: "Resident Evil Requiem",
+        price: "€10.00",
+        tags: ["New", "denuvo"],
+        soldCount: 0,
+        available: "Yes",
+        image: "https://image.api.playstation.com/vulcan/ap/rnd/202512/1205/79661d7a2bdb9784749b4e57e1456ca89f7ac7bed8615aee.png",
+        description: "A new era of survival horror arrives with Resident Evil Requiem, the latest and most immersive installment in the iconic Resident Evil series. Experience terrifying survival horror with FBI analyst Grace Ashcroft and plunge into gripping, adrenaline-pumping action with legendary agent Leon S. Kennedy. Their intertwined fates and unique playstyles create a harrowing, emotional experience that will chill you to the core.",
+        features: ["Guaranteed Denuvo Bypass", "Direct Seller Assistance", "1-Click Easy Installer (Game + Bypass)", "24/7 Discord Support"]
 ];
 
 const konfiguracjaTagow = {
